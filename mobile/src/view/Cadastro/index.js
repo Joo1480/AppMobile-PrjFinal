@@ -11,7 +11,7 @@ export default function Login({ navigation }) {
 
     <View style={styles.View}>
       <View style={styles.ViewCard}>
-        <Text style={styles.titleText}>Entrar</Text>
+      <Text style={styles.titleText}>Novo Usuário</Text>
         <Text style={styles.labelText}>E-mail</Text>
         <TextInput
           style={styles.input}
@@ -22,15 +22,14 @@ export default function Login({ navigation }) {
           style={styles.input}
           placeholder="Senha"
         />
+        <Text style={styles.labelText}>Confirme Senha</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Senha"
+        />
         <TouchableOpacity >
           <View style={styles.button}>
-            <Text style={styles.textbutton  }>Entrar</Text>
-          </View>
-        </TouchableOpacity >
-        <Text style={styles.labelTextOu}>ou</Text>
-        <TouchableOpacity  onPress={() => { navigation.navigate('Cadastro') }}>
-          <View style={styles.buttonCad}>
-            <Text style={styles.textbuttonCad}>Novo Usuario</Text>
+            <Text style={styles.textbutton  }>Cadastrar</Text>
           </View>
         </TouchableOpacity >
       </View>
