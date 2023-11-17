@@ -22,9 +22,9 @@ export default function Login({ navigation }) {
           style={styles.input}
           placeholder="Senha"
         />
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => { navigation.navigate('Principal') }}>
           <View style={styles.button}>
-            <Text style={styles.textbutton  }>Entrar</Text>
+            <Text style={styles.textbutton}>Entrar</Text>
           </View>
         </TouchableOpacity >
         <Text style={styles.labelTextOu}>ou</Text>
