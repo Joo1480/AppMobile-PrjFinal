@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import { TextInput, TouchableOpacity , View, StyleSheet, Text } from 'react-native';
+import { cadastrar } from '../../Service/requisicoesFirebase'
 
 import styles from './styles';
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [confirmaSenha, setConfirmaSenha] = useState('');
+
+  async function realizarCadastro(){
+    await cadastrar(email, senha, confirmaSenha);
+    setEmail('')
+    setSenha('')
+    setConfirmaSenha('')
+    navigation.navigate('Login')
+  }
 
   return (
 
@@ -16,20 +26,23 @@ export default function Login({ navigation }) {
         <TextInput
           style={styles.input}
           placeholder="E-mail"
+          onChangeText={texto => setEmail(texto)}
         />
         <Text style={styles.labelText}>Senha</Text>
         <TextInput
           style={styles.input}
           placeholder="Senha"
+          onChangeText={texto => setSenha(texto)}
         />
         <Text style={styles.labelText}>Confirme Senha</Text>
         <TextInput
           style={styles.input}
-          placeholder="Senha"
+          placeholder="Confirme Senha"
+          onChangeText={texto => setConfirmaSenha(texto)}
         />
         <TouchableOpacity >
           <View style={styles.button}>
-            <Text style={styles.textbutton  }>Cadastrar</Text>
+            <Text style={styles.textbutton } onPress={() => realizarCadastro()}>Cadastrar</Text>
           </View>
         </TouchableOpacity >
       </View>

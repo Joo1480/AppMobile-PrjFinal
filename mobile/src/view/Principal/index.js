@@ -9,8 +9,8 @@ export default function Login({ navigation }) {
 
     <View style={styles.View}>
       <View style={styles.Cabeçalho}>
-        <Text style={styles.CabText}>Senha</Text>
-        <TouchableOpacity style={styles.CabBotao} >
+        <Text style={styles.CabText}>Bem Vindo!</Text>
+        <TouchableOpacity style={styles.CabBotao} onPress={() => { navigation.navigate('Login') }}>
           <Icon
             name={'log-out'}
             size={20}
